@@ -1,0 +1,57 @@
+\mode<presentation>
+
+% Requirement
+\RequirePackage{tikz}
+
+% Settings
+\useinnertheme{NMBU_nn}
+\useoutertheme{NMBU_nn}
+\usecolortheme{NMBU_nn}
+\usefonttheme{NMBU_nn}
+
+\setbeamertemplate{itemize subsubitem}{$\clubsuit$}
+\setbeamertemplate{caption}[numbered]
+\setbeamertemplate{navigation symbols}{} % turn off pdf nav symbols
+
+\newcommand{\thankyoumessage}[1]{\node[white,align=center,font=\huge]
+  at (0.425\paperwidth, 0.6\paperheight) {\textbf{#1}};}
+
+\newcommand{\wider}[2][3em]{%
+  \makebox[\linewidth][c]{%
+    \begin{minipage}{\dimexpr\textwidth+#1\relax}
+      \raggedright#2
+    \end{minipage}%
+  }%
+}
+
+\setbeamertemplate{finalpage}{
+  % \begin{frame}
+    % \begin{tikzpicture}
+      \def\squaresize{0.52}
+      \def\halfsquare{0.5*\squaresize}
+      \useasboundingbox[] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+      \fill[color=nmbugreen] (-1,0) rectangle (1.1\paperwidth,1.1\paperheight);
+
+      % \draw[white] (0.5\paperwidth,0.9\paperheight) -- (0.5\paperwidth,0.1\paperheight);
+
+      \node[anchor=north east] (logo) at
+      (0.9218\paperwidth,1.0038\paperheight)
+      {\includegraphics[scale=0.5]{nmbu_symbol_wh.eps}};
+
+      \foreach \x in {0,1,2,...,13} {
+        \def\xs{\x *\squaresize +\x *\halfsquare}
+        \foreach \y in {0,1,2} {
+          \def\ys{\y *\squaresize +\y *\halfsquare +1}
+          \draw[white,line width=0.3mm] (\xs,\ys) -- (\xs +\squaresize,\ys) -- (\xs
+          +\squaresize,\ys +\squaresize) -- (\xs,\ys +\squaresize) --cycle;
+          \draw[white,line width=0.3mm] (\xs +\halfsquare,\ys
+          +\halfsquare) -- (\xs +\squaresize +\halfsquare,\ys +\halfsquare) -- (\xs
+          +\squaresize +\halfsquare,\ys +\squaresize +\halfsquare) --
+          (\xs +\halfsquare,\ys +\squaresize +\halfsquare) -- cycle;
+        }
+      }
+    % \end{tikzpicture}
+  % \end{frame}
+}
+
+\mode<all>

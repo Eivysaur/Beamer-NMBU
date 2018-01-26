@@ -1,0 +1,16 @@
+\mode<presentation>
+
+% Set \frametitle command
+\defbeamertemplate*{frametitle}{NMBU}[1][]{
+  \begin{beamercolorbox}[wd=\paperwidth,ht=1cm]{frametitle}
+    \begin{tikzpicture}
+      \useasboundingbox[fill=white,opacity=0](0,0) rectangle (\the\paperwidth,\the\paperheight);
+
+      \node[anchor=north west,font=\LARGE] at
+      (0.8,0.5){\insertframetitle};
+
+    \end{tikzpicture}
+  \end{beamercolorbox}
+}
+
+\mode<all>
