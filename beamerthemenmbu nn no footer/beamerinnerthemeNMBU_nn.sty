@@ -1,0 +1,67 @@
+\mode<presentation>
+
+% Define the background. The background is different depending on the page number
+\setbeamertemplate{background}{
+  \begin{tikzpicture}
+    \useasboundingbox (0,0) rectangle(\the\paperwidth,\the\paperheight);
+
+    \ifnum\thepage>0\relax%
+      \fill[color=nmbugreen] (0,0) rectangle (\the\paperwidth,\the\paperheight);
+    \fi
+    
+    \ifnum\thepage>1\relax%
+      \draw[white] (0.08\paperwidth,1) -- (0.92\paperwidth,1);
+      \node[white] at (0.715\paperwidth,0.55) {\scriptsize Noregs miljø- og biovitskaplege universitet};
+      \node[anchor=north east] (logo) at (\paperwidth,\paperheight)
+      {\includegraphics[scale=0.5]{nmbu_symbol_wh.eps}};
+    \fi
+    
+    \ifnum\thepage>2\relax%
+      \fill[framebackground] (0,0) rectangle(\the\paperwidth,\the\paperheight);
+      % NMBU symbol (logo without the text) in top right corner
+      \node[anchor=north east] (logo) at (\paperwidth,\paperheight)
+      {\includegraphics[scale=0.5]{nmbu_symbol_green_rgb.eps}};
+      
+      % If you want something that looks like a footer
+      % \draw[nmbugreen] (0.08\paperwidth,1) -- (0.92\paperwidth,1);
+      % \node[nmbugreen] at (0.1\paperwidth,0.55) {\scriptsize \insertframenumber};
+      % \node[nmbugreen] at (0.715\paperwidth,0.55) {\scriptsize Noregs miljø- og biovitskaplege universitet};
+    \fi
+  \end{tikzpicture}
+}
+
+% Set \titlepage command
+\defbeamertemplate*{title page}{NMBU}[1][]{
+  \begin{tikzpicture}
+    \useasboundingbox (0,0) rectangle (\the\paperwidth,\the\paperheight);
+
+    \ifnum\thepage=1\relax%
+    \node[] (logo) at (0.45\paperwidth,0.5\paperheight)
+    {\includegraphics[scale=1.3]{nmbu_logo_nyno_kvit_logo_og_tekst.eps}};
+    \fi
+    
+    \ifnum\thepage>1\relax%
+    % \node[anchor=north east,draw] (logo) at (\paperwidth,\paperheight)
+    % {\includegraphics[scale=0.5]{NMBU_symbol_hvit.eps}};
+    % \node[anchor=north west,draw] (logo) at (0\paperwidth,0.2\paperheight)
+    % {\includegraphics[scale=0.5]{NMBU_symbol_hvit.eps}};
+    % \node[anchor=north east,draw] (logo) at (0.8\paperwidth,\paperheight)
+    % {\includegraphics[scale=0.5]{NMBU_symbol_green_RGB.eps}};
+    % \node[anchor=north east,draw] (logo) at (0.6\paperwidth,\paperheight)
+    % {\includegraphics[scale=0.5]{NMBU_symbol_green_CMYK.eps}};
+
+    \node[white,text width=8cm,anchor=south west,] at
+    (0.02\paperwidth,0.6\paperheight) {\LARGE \textbf{\inserttitle}};
+
+    \node[white,text width=8cm,anchor=south west,] at
+    (0.02\paperwidth,0.5\paperheight) {\normalsize \insertauthor};
+
+    \node[white,text width=8cm,anchor=south west,] at
+    (0.02\paperwidth,0.435\paperheight) {\normalsize \insertdate};
+
+    \fi
+  \end{tikzpicture}
+}
+
+\mode
+<all>

@@ -1,0 +1,81 @@
+\documentclass[aspectratio=43,xcolor={rgb}]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[nynorsk]{babel}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{physics}
+
+\title{Presentation title}
+\date{\today}
+\author{Aaron A. Aaronson}
+
+\usetheme{NMBU_bm}
+
+\begin{document}
+
+% The first title page is just the NMBU logo. This is always page 1!
+% In order to remove this, use \setcounter to manually set first slide to page two
+\setcounter{page}{1}
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Title page with the actual title on it. This is always page 2!
+\setcounter{page}{2}
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\setcounter{page}{3}
+\setcounter{framenumber}{0} % First slide after titlepages is frame no. 1
+\begin{frame}
+  \frametitle{Overskrift}
+  Bacon ipsum dolor amet brisket kevin meatball meatloaf, rump pig
+  sirloin cow. Meatloaf swine ham shank filet mignon shoulder jowl
+  fatback capicola bresaola pancetta. Andouille filet mignon doner,
+  tenderloin tongue rump kielbasa capicola.
+  \begin{figure}[tpbh]
+    \centering
+    \includegraphics[scale=0.2]{spectrometer.jpg}
+    \caption{Captain Caption.}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Math examples}
+  \begin{equation}
+    \hat{H}\Psi = E\Psi
+  \end{equation}
+  \begin{equation}
+    \frac{1}{2}\alpha\beta = \qty|\psi^*\psi|^2
+  \end{equation}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Test block function}
+  \begin{block}{Standard Block}
+    This is a standard block.
+  \end{block}
+  
+  \begin{exampleblock}{Example Block}
+    This is an example block.
+  \end{exampleblock}
+  
+  \begin{alertblock}{Alert Block}
+    This is an alert block.
+  \end{alertblock}
+\end{frame}
+
+\begin{frame}
+  \begin{tikzpicture}
+    \usebeamertemplate{finalpage}
+    \thankyoumessage{Takk!}
+  \end{tikzpicture}
+\end{frame}
+
+\end{document}
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
